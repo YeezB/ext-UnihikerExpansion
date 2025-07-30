@@ -1,7 +1,7 @@
 
     //% color="#f08080" iconWidth=50 iconHeight=40
     namespace mindUser{
-    //% block="读取引脚[ec]的[mode]" blockType="reporter"
+    //% block="read pin[ec]in[mode]" blockType="reporter"
     //% ec.shadow="dropdown" ec.options="ec" 
     //% mode.shadow="dropdown" mode.options="mode" 
     export function myBlock0(parameter: any, block: any) {
@@ -21,7 +21,7 @@
         Generator.addCode(`(eunihiker.getvalue(${ec}, ${mode}))`)
     }    
 
-    //% block="设置引脚[ec]输出[v]" blockType="command"
+    //% block="set pin[ec]output[v]" blockType="command"
     //% ec.shadow="dropdown" ec.options="ec" 
     //% v.shadow="dropdown" v.options="v" 
     export function myBlock1(parameter: any, block: any) {
@@ -35,7 +35,7 @@
     }
         
 
-    //% block="设置引脚[s] 180度舵机为[dir]度" blockType="command"
+    //% block="Set pin[s] 180° Servo into[dir]degree" blockType="command"
     //% s.shadow="dropdown" s.options="s" 
     //% dir.shadow="angle" dir.defl=90
     export function myBlock2(parameter: any, block: any) {
@@ -47,7 +47,7 @@
         Generator.addCode(`eunihiker.setServoAngle(${s}, ${dir});`)
     }
     
-    //% block="设置引脚[s] 360度舵机以[speedservo]%的速度[oriservo]" blockType="command"
+    //% block="Set pin[s] 360° Servo[oriservo]in speed[speedservo]%" blockType="command"
     //% s.shadow="dropdown" s.options="s" 
     //% speedservo.shadow="range" speedservo.params.min=0 speedservo.params.max=100 speedservo.defl=50
     //% oriservo.shadow="dropdown" oriservo.options="oriservo"
@@ -61,7 +61,7 @@
         Generator.addCode(`eunihiker.setServo360(${s}, ${oriservo}, ${speedservo});`)
     }
 
-    //% block="设置RGB[num]颜色[color]亮度[brightness]" blockType="command"
+    //% block="Set RGB[num]color[color]brightness[brightness]" blockType="command"
     //% num.shadow="dropdown" num.options="num" 
     //% color.shadow="colorPalette" color.params.column=7
     //% color.params.colorsFunc="getColorsFunc_" 
@@ -78,7 +78,7 @@
 	led[${num}] = ${color};
 	eunihiker.setWS2812((uint32_t*)led, ${brightness}*25);`)
     }
-    //% block="设置电机[motor]以[speed]的速度[dir]" blockType="command"
+    //% block="Set motor[motor][dir]in speed[speed]" blockType="command"
     //% motor.shadow="dropdown" motor.options="motor" 
     //% speed.shadow="range" speed.defl=200 speed.params.min=0    speed.params.max=255    speed.defl=200
     //% dir.shadow="dropdown" dir.options="dir" 
@@ -94,7 +94,7 @@
         Generator.addCode(`eunihiker.motorRun(${motor},${speed},${dir});`)
     }
 
-    //% block="红外发射数据[hex]" blockType="command"
+    //% block="IR Sent data[hex]" blockType="command"
     //% hex.shadow="normal" hex.defl=12345678
     export function myBlock6(parameter: any, block: any) {
         let hex= parameter.hex.code
@@ -104,7 +104,7 @@
         Generator.addCode(`eunihiker.sendIR(${hex});`)
     }
 
-    //% block="读取红外接收的数据" blockType="reporter"
+    //% block="read IR receiver data" blockType="reporter"
     export function myBlock7(parameter: any, block: any) {
         Generator.addInclude("myBlock4248",`#include "DFRobot_UnihikerExpansion.h"`)
         Generator.addObject("myBlock2068",`DFRobot_UnihikerExpansion_I2C eunihiker(&Wire)`,"")
@@ -112,14 +112,14 @@
         Generator.addCode(`eunihiker.getIRData()`)
     }
 
-    //% block="读取超声波传感器距离(cm)" blockType="reporter"
+    //% block="read ultrasonic sensor distance(cm)" blockType="reporter"
     export function myBlock8(parameter: any, block: any) {
         Generator.addInclude("myBlock4248",`#include "DFRobot_UnihikerExpansion.h"`)
         Generator.addObject("myBlock2068",`DFRobot_UnihikerExpansion_I2C eunihiker(&Wire)`,"")
         Generator.addSetup("myBlock8780",`while(!eunihiker.begin()){delay(1000);} `)
         Generator.addCode(`eunihiker.getSr04Distance()`)
     }
-    //% block="读取电池电量(%)" blockType="reporter"
+    //% block="Read battery remain capacity(%)" blockType="reporter"
     export function myBlock9(parameter: any, block: any) {
         Generator.addInclude("myBlock4248",`#include "DFRobot_UnihikerExpansion.h"`)
         Generator.addObject("myBlock2068",`DFRobot_UnihikerExpansion_I2C eunihiker(&Wire)`,"")

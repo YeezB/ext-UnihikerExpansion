@@ -19,7 +19,7 @@
         "web",
         "linux"
     ],
-    "version": "0.0.4",
+    "version": "0.0.5",
     "asset": {
         "arduinoC": {
             "dir": "arduinoC/",
@@ -35,7 +35,7 @@
         "python": {
         "dir": "python/",
         "main": "main.ts",
-        "version": "0.0.4",
+        "version": "0.0.5",
         "dependencies": {
                   "pinpong":""
         }

@@ -1,0 +1,36 @@
+{
+    "mindUser.myBlock0|block": "设置引脚[a]输出[b]值",
+    "mindUser.b.High|menu": "高电平",
+    "mindUser.b.Low|menu": "低电平",
+
+    "mindUser.myBlock1|block": "读取[c]的模拟值",
+
+    "mindUser.myBlock2|block": "读取[d]的数字值",
+
+    "mindUser.myBlock3|block": "读取[e]的[f][g]",
+    "mindUser.g.Temperature（℃）|menu": "温度(℃)",
+    "mindUser.g.Humidity（%RH）|menu": "湿度(%RH)",
+
+    "mindUser.myBlock4|block": "读取[e]的DS18B20温度(℃)",
+
+    "mindUser.myBlock5|block": "红外发射数据[j]",
+
+    "mindUser.myBlock6|block": "读取红外接受的数据",
+
+    "mindUser.myBlock7|block": "读取超声波传感器的数据(cm)",
+
+    "mindUser.myBlock8|block": "读取电池剩余电量(%)",
+
+    "mindUser.myBlock9|block": "设置RGB[k]颜色[l]亮度[m]",
+
+    "mindUser.myBlock10|block": "设置pin[h] 180°舵机至[i]",
+
+    "mindUser.myBlock11|block": "设置pin[n] 360°舵机以[o]%的速度[p]",
+    "mindUser.p.forward|menu": "正转",
+    "mindUser.p.backward|menu": "反转",
+    "mindUser.p.stop|menu": "停止",
+
+    "mindUser.myBlock12|block": "设置电机[q]以[r]的速度[s]",
+    "mindUser.s.forward|menu": "正转",
+    "mindUser.s.backward|menu": "反转"
+}

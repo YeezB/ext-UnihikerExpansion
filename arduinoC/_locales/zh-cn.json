@@ -1,1 +1,36 @@
-{}
+{
+    "mindUser.myBlock0|block": "读取引脚[ec]的[mode]值 ",
+    "mindUser.mode.Analog Value|menu": "模拟值",
+    "mindUser.mode.Digital Value|menu": "数字值",
+    "mindUser.mode.DHT11 Temperature ℃|menu": "DHT11温度℃",
+    "mindUser.mode.DHT11 Humidity %RH|menu": "DHT11湿度%RH",
+    "mindUser.mode.DHT22 Temperature ℃|menu": "DHT22温度℃",
+    "mindUser.mode.DHT22 Humidity %RH|menu": "DHT22湿度%RH",
+    "mindUser.mode.DS18B20 Temperature ℃|menu": "DHT22温度℃",
+
+    "mindUser.myBlock1|block": "设置引脚[ec]输出[v]值 ",
+    "mindUser.v.High|menu": "高电平",
+    "mindUser.v.Low|menu": "低电平",
+
+    "mindUser.myBlock2|block": "设置引脚[s] 180度舵机为[dir]度",
+
+    "mindUser.myBlock3|block": "设置引脚[s] 360度舵机以[speedservo]%的速度[oriservo]",
+    "mindUser.oriservo.forward|menu": "正转",
+    "mindUser.oriservo.backward|menu": "翻转",
+    "mindUser.oriservo.stop|menu": "停止",
+
+    "mindUser.myBlock4|block": "设置RGB[num]颜色[color]亮度[brightness]",
+
+    "mindUser.myBlock5|block": "设置电机[motor]以[speed]的速度[dir]",
+    "mindUser.motor.All|menu": "所有",
+    "mindUser.dir.forward|menu": "正转",
+    "mindUser.dir.backward|menu": "反转",
+
+    "mindUser.myBlock6|block": "红外发送数据[hex]",
+
+    "mindUser.myBlock7|block": "读取红外接收的数据",
+
+    "mindUser.myBlock8|block": "读取超声波传感器的距离(cm)",
+
+    "mindUser.myBlock9|block": "读取电池剩余电量(%)"
+}

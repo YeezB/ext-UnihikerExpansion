@@ -30,11 +30,11 @@
     "b": {
         "menu": [
             [
-                "高电平",
+                "High",
                 "HIGH"
             ],
             [
-                "低电平",
+                "Low",
                 "LOW"
             ]
         ]
@@ -138,11 +138,11 @@
     "g": {
         "menu": [
             [
-                "温度（℃）",
+                "Temperature（℃）",
                 "temperature"
             ],
             [
-                "湿度（%RH）",
+                "Humidity（%RH）",
                 "humidity"
             ]
         ]
@@ -178,11 +178,11 @@
     "k": {
         "menu": [
             [
-                "灯号0",
+                "LED0",
                 "RGB0"
             ],
             [
-                "灯号1",
+                "LED1",
                 "RGB1"
             ]
         ]
@@ -218,15 +218,15 @@
     "p": {
         "menu": [
             [
-                "正转",
+                "forward",
                 "FORWARD"
             ],
             [
-                "反转",
+                "backward",
                 "BACKWARD"
             ],
             [
-                "停止",
+                "stop",
                 "STOP"
             ]
         ]
@@ -254,11 +254,11 @@
     "s": {
         "menu": [
             [
-                "正转",
+                "forward",
                 "forward"
             ],
             [
-                "反转",
+                "backward",
                 "backward"
             ]
         ]

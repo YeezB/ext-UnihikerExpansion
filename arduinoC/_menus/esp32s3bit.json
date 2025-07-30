@@ -2,11 +2,11 @@
     "v": {
         "menu": [
             [
-                "高电平",
+                "High",
                 "eHIGH"
             ],
             [
-                "低电平",
+                "Low",
                 "eLOW"
             ]
         ]
@@ -30,7 +30,7 @@
                 "eMotor4"
             ],
             [
-                "全部",
+                "All",
                 "eMotorall"
             ]
         ]
@@ -78,11 +78,11 @@
     "dir": {
         "menu": [
             [
-                "前进",
+                "forward",
                 "1"
             ],
             [
-                "后退",
+                "backward",
                 "0"
             ]
         ]
@@ -118,31 +118,31 @@
     "mode": {
         "menu": [
             [
-                "模拟值",
+                "Analog Value",
                 "eADC"
             ],
             [
-                "数字值",
+                "Digital Value",
                 "eReadGpio"
             ],
             [
-                "DHT11温度℃",
+                "DHT11 Temperature ℃",
                 "eDHT11"
             ],
             [
-                "DHT11湿度%RH",
+                "DHT11 Humidity %RH",
                 "eDHT11_hum"
             ],
             [
-                "DHT22温度℃",
+                "DHT22 Temperature ℃",
                 "eDHT22"
             ],
             [
-                "DHT22湿度%RH",
+                "DHT22 Humidity %RH",
                 "eDHT22_hum"
             ],
             [
-                "DS18B20温度℃",
+                "DS18B20 Temperature ℃",
                 "eDS18B20"
             ]
         ]
@@ -150,15 +150,15 @@
     "oriservo": {
         "menu": [
             [
-                "正转",
+                "forward",
                 "eForward"
             ],
             [
-                "反转",
+                "backward",
                 "eBackward"
             ],
             [
-                "停止",
+                "stop",
                 "eStop"
             ]
         ]

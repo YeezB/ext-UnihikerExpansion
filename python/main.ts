@@ -1,10 +1,10 @@
     //% color="#FF8C00" iconWidth=50 iconHeight=40
     namespace mindUser{
         
-    //% block="设置引脚[a]输出[b]" blockType="command"
+    //% block="Set pin[a]output[b]" blockType="command"
     //% a.shadow="dropdown" a.options="a" 
     //% b.shadow="dropdown" b.options="b" 
-    export function myBlock1(parameter: any, block: any) {
+    export function myBlock0(parameter: any, block: any) {
         let a= parameter.a.code
         let b= parameter.b.code
         Generator.addImport(`from pinpong.board import Board
@@ -17,9 +17,9 @@ eunihiker = UnihikerExpansion() `)
     }
 
 
-    //% block="读取[c]的模拟值" blockType="reporter"
+    //% block="read[c]analog value" blockType="reporter"
     //% c.shadow="dropdown" c.options="c" 
-    export function myBlock2(parameter: any, block: any) {
+    export function myBlock1(parameter: any, block: any) {
         let c= parameter.c.code
         Generator.addImport(`from pinpong.board import Board
 from dfrobot_unihiker_expansion import UnihikerExpansion, IONum, IOType`)
@@ -31,9 +31,9 @@ eunihiker = UnihikerExpansion() `)
     }
 
 
-    //% block="读取[d]的数字值" blockType="reporter"
+    //% block="read[d]digital value" blockType="reporter"
     //% d.shadow="dropdown" d.options="d" 
-    export function myBlock3(parameter: any, block: any) {
+    export function myBlock2(parameter: any, block: any) {
         let d= parameter.d.code
         Generator.addImport(`from pinpong.board import Board
 from dfrobot_unihiker_expansion import UnihikerExpansion, IONum, IOType, GpioState`)
@@ -44,11 +44,11 @@ eunihiker = UnihikerExpansion() `)
         Generator.addCode(`eunihiker.get_gpio_state(IONum.${d})`)
     }
 
-    //% block="读取[e]的[f][g]" blockType="reporter"
+    //% block="read[e][f]sensor in[g]" blockType="reporter"
     //% e.shadow="dropdown" e.options="e" 
     //% f.shadow="dropdown" f.options="f" 
     //% g.shadow="dropdown" g.options="g" 
-    export function myBlock4(parameter: any, block: any) {
+    export function myBlock3(parameter: any, block: any) {
         let e= parameter.e.code
         let f= parameter.f.code
         let g= parameter.g.code
@@ -61,8 +61,20 @@ eunihiker = UnihikerExpansion() `)
         Generator.addCode(`eunihiker.get_dht_value(IONum.${e}).${g}`)
     }
 
+    //% block="read pin[e]DS18B20 temperature(℃)" blockType="reporter"
+    //% e.shadow="dropdown" e.options="e" 
+    export function myBlock4(parameter: any, block: any) {
+        let e= parameter.e.code
+        Generator.addImport(`from pinpong.board import Board
+from dfrobot_unihiker_expansion import UnihikerExpansion, IONum, IOType`)
+        Generator.addInit("myBlock7105",`Board("").begin()
 
-    //% block="红外发射数据[j]" blockType="command"
+eunihiker = UnihikerExpansion() `)
+        Generator.addInit(`myBlock3527${e}`,`eunihiker.set_mode(IONum.${e}, IOType.DS18B20)`)
+        Generator.addCode(`eunihiker.get_18B20_value(IONum.${e})`)
+    }
+
+    //% block="IR sent data[j]" blockType="command"
     //% j.shadow="normal" j.defl=12345678
     export function myBlock5(parameter: any, block: any) {
         let j= parameter.j.code
@@ -74,7 +86,7 @@ eunihiker = UnihikerExpansion() `)
         Generator.addCode(`eunihiker.send_ir(${j})`)
     }
 
-    //% block="读取红外接受的数据" blockType="reporter"
+    //% block="read IR receive data" blockType="reporter"
     export function myBlock6(parameter: any, block: any) {
         Generator.addImport(`from pinpong.board import Board
 from dfrobot_unihiker_expansion import UnihikerExpansion`)
@@ -84,7 +96,7 @@ eunihiker = UnihikerExpansion() `)
         Generator.addCode(`eunihiker.get_ir_data()`)
     }
 
-    //% block="读取超声波传感器的数据(cm)" blockType="reporter"
+    //% block="read ultrasonic sensor data(cm)" blockType="reporter"
     export function myBlock7(parameter: any, block: any) {
         Generator.addImport(`from pinpong.board import Board
 from dfrobot_unihiker_expansion import UnihikerExpansion`)
@@ -94,7 +106,7 @@ eunihiker = UnihikerExpansion() `)
         Generator.addCode(`eunihiker.get_sr04_distance()`)
     }
     
-    //% block="读取电池电量%" blockType="reporter"
+    //% block="read battery remain capacity(%)" blockType="reporter"
     export function myBlock8(parameter: any, block: any) {
         Generator.addImport(`from pinpong.board import Board
 from dfrobot_unihiker_expansion import UnihikerExpansion`)
@@ -104,7 +116,7 @@ eunihiker = UnihikerExpansion() `)
         Generator.addCode(`eunihiker.get_battery()`)
     }
 
-    //% block="设置RGB[k]颜色[l]亮度[m]" blockType="command"
+    //% block="Set RGB[k]color[l]brightness[m]" blockType="command"
     //% k.shadow="dropdown" k.options="k" 
     //% l.shadow="colorPalette" l.params.column=7
     //% l.params.colorsFunc="getColorsFunc_" 
@@ -124,9 +136,9 @@ eunihiker.set_bright(${m}*25)`)
     }
 
     
-    //% block="设置引脚[h] 180舵机为[i]度" blockType="command"
+    //% block="Set pin[h] 180° servo in[i]°" blockType="command"
     //% h.shadow="dropdown" h.options="h" 
-    //% i.shadow="angle" i.defl=1
+    //% i.shadow="angle" i.defl=0
     export function myBlock10(parameter: any, block: any) {
         let h= parameter.h.code
         let i= parameter.i.code
@@ -138,7 +150,7 @@ eunihiker = UnihikerExpansion() `)
         Generator.addCode(`eunihiker.set_servo_angle(ServoNum.${h},${i})`)
     }
 
-    //% block="设置引脚[n] 360°舵机以[o] %的速度[p]" blockType="command"
+    //% block="Set pin[n] 360°servo[p]in speed[o]%" blockType="command"
     //% n.shadow="dropdown" n.options="n" 
     //% o.shadow="range" o.params.min=0  o.params.max=100 o.defl=50
     //% p.shadow="dropdown" p.options="p" 
@@ -154,7 +166,7 @@ eunihiker = UnihikerExpansion()`)
         Generator.addCode(`eunihiker.set_servo360(ServoNum.${n}, Servo360Direction.${p}, ${o})`)
     }
 
-    //% block="设置电机[q]以[r]的速度[s]" blockType="command"
+    //% block="Set motor[q][s]in speed[r]" blockType="command"
     //% q.shadow="dropdown" q.options="q" 
     //% r.shadow="range" r.params.min=0  r.params.max=100 r.defl=200
     //% s.shadow="dropdown" s.options="s" 
@@ -164,7 +176,7 @@ eunihiker = UnihikerExpansion()`)
         let s= parameter.s.code
         Generator.addImport(`from pinpong.board import Board
 from dfrobot_unihiker_expansion import UnihikerExpansion, MPeriod, MotorNum`)
-        Generator.addInit("myBlock9134",`Board("").begin()
+        Generator.addInit("myBlock7105",`Board("").begin()
 
 eunihiker = UnihikerExpansion()
 eunihiker.set_motor_period(MPeriod.MOTOR1_2, 255)
