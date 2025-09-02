@@ -1,4 +1,4 @@
-    //% color="#FF8C00" iconWidth=50 iconHeight=40
+    //% color="#f08080" iconWidth=50 iconHeight=40
     namespace mindUser{
         
     //% block="Set pin[a]output[b]" blockType="command"
@@ -71,7 +71,7 @@ from dfrobot_unihiker_expansion import UnihikerExpansion, IONum, IOType`)
 
 eunihiker = UnihikerExpansion() `)
         Generator.addInit(`myBlock3527${e}`,`eunihiker.set_mode(IONum.${e}, IOType.DS18B20)`)
-        Generator.addCode(`eunihiker.get_18B20_value(IONum.${e})`)
+        Generator.addCode(`eunihiker.get_18b20_value(IONum.${e})`)
     }
 
     //% block="IR sent data[j]" blockType="command"

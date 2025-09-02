@@ -6,7 +6,7 @@
     "mindUser.mode.DHT11 Humidity %RH|menu": "DHT11湿度%RH",
     "mindUser.mode.DHT22 Temperature ℃|menu": "DHT22温度℃",
     "mindUser.mode.DHT22 Humidity %RH|menu": "DHT22湿度%RH",
-    "mindUser.mode.DS18B20 Temperature ℃|menu": "DHT22温度℃",
+    "mindUser.mode.DS18B20 Temperature ℃|menu": "DS18B20温度℃",
 
     "mindUser.myBlock1|block": "设置引脚[ec]输出[v]值 ",
     "mindUser.v.High|menu": "高电平",
