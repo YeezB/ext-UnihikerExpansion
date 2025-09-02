@@ -1,11 +1,11 @@
 {
     "name": {
-        "zh-cn": "行空板IO扩展板",
-        "en": "UnihikerIOExpansion"
+        "zh-cn": "行空板IO扩展板(DFR1216)",
+        "en": "UnihikerIOExpansion(DFR1216)"
     },
     "description": {
-        "zh-cn": "行空板IO扩展板 mind+的用户库",
-        "en": "Mind+ UserLibrary of UnihikerIOExpansion"
+        "zh-cn": "行空板IO扩展板(DFR1216) mind+的用户库",
+        "en": "Mind+ UserLibrary of UnihikerIOExpansion(DFR1216)"
     },
     "author": "drobot_yeezb",
     "email": "zibin.ye@dfrobot.com",
